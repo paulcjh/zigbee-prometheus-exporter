@@ -2,6 +2,8 @@ import os
 import time
 import json
 
+from watchgod import run_process, RegExpWatcher, AllWatcher
+
 import paho.mqtt.client as mqtt
 from prometheus_client import start_http_server, Gauge
 
@@ -10,7 +12,7 @@ device_config = []
 MQTT_SERVER_HOST = os.getenv("MQTT_SERVER_HOST")
 
 
-with open("config/last-state.json", "r") as ls:
+with open("last-state.json", "r") as ls:
     file_data = ls.read()
     device_state = json.loads(file_data)
 
@@ -30,7 +32,7 @@ def on_broadcast(client, userdata, message):
 
 
 def start():
-    print("Starting zigbee prometheus exporter")
+    print("Starting zigbee prometheus exporter", flush=True)
     mqtt_client = mqtt.Client()
 
     mqtt_client.on_message = on_broadcast
@@ -40,7 +42,7 @@ def start():
 
     mqtt_client.subscribe("zigbee2mqtt/+")
 
-    with open("config/device-config.json", "r") as df:
+    with open("device-config.json", "r") as df:
         device_config = json.loads(df.read())
     for device in device_config:
         if not device["device_id"] in device_state:
@@ -63,10 +65,17 @@ def start():
             )
     start_http_server(11111)
     while True:
-        with open("config/last-state.json", "r") as ls:
+        with open("last-state.json", "r") as ls:
             last_state = json.loads(ls.read())
 
         if last_state != device_state:
-            with open("config/last-state.json", "w") as ls:
+            with open("last-state.json", "w") as ls:
                 ls.write(json.dumps(device_state))
         time.sleep(1)
+if __name__ == "__main__":
+    print("Starting!", flush=True)
+    run_process(
+        "/core/",
+        start,
+        watcher_cls=AllWatcher,
+    )
