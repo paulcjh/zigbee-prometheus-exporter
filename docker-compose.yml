@@ -12,3 +12,24 @@ services:
       - config.env
     ports:
       - 11111:11111
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    restart: unless-stopped
+    volumes:
+      - "./mosquitto-data:/mosquitto"
+    ports:
+      - "1884:1883"
+    command: "mosquitto -c /mosquitto-no-auth.conf"
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    image: koenkk/zigbee2mqtt
+    volumes:
+      - ./zigbee-data:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=Europe/London
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
