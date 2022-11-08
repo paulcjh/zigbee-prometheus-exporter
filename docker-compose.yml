@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  zigbee-prometheus-exporter:
+    container_name: zigbee-prometheus-exporter
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./config:/core/
+    env_file:
+      - config.env
