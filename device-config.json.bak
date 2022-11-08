@@ -1,0 +1,13 @@
+[
+{
+	"device_id" : "0x00158d00089758de",
+	"name" : "living_room_climate_sensor",
+	"sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
+},
+{
+        "device_id" : "0x00124b00251be43e",
+        "name" : "climate_sensor_2",
+        "sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
+}
+
+]
