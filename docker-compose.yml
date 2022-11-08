@@ -10,3 +10,5 @@ services:
       - ./config/last-state.json:/core/state/last-state.json
     env_file:
       - config.env
+    ports:
+      - 11111:11111
