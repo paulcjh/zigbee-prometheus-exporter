@@ -1,5 +1,10 @@
 [
+
+
+
+
 {
+
 	"device_id" : "0x00158d00089758de",
 	"name" : "living_room_climate_sensor",
 	"sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]

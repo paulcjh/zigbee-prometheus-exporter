@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app ./app
 
-CMD [ "python","-m","watchgod", "app.main" ]
+#CMD [ "python","-m","watchgod","--extensions=.json","app.start" ]
+CMD ["python", "./app/__init__.py"]

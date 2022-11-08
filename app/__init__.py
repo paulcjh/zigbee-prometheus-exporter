@@ -2,6 +2,8 @@ import os
 import time
 import json
 
+from watchgod import run_process, RegExpWatcher, AllWatcher
+
 import paho.mqtt.client as mqtt
 from prometheus_client import start_http_server, Gauge
 
@@ -30,7 +32,7 @@ def on_broadcast(client, userdata, message):
 
 
 def start():
-    print("Starting zigbee prometheus exporter")
+    print("Starting zigbee prometheus exporter", flush=True)
     mqtt_client = mqtt.Client()
 
     mqtt_client.on_message = on_broadcast
@@ -70,3 +72,10 @@ def start():
             with open("last-state.json", "w") as ls:
                 ls.write(json.dumps(device_state))
         time.sleep(1)
+if __name__ == "__main__":
+    print("Starting!", flush=True)
+    run_process(
+        "/core/",
+        start,
+        watcher_cls=AllWatcher,
+    )

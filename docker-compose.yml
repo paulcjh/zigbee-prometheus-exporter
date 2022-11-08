@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ./config:/core/
+      - ./config/device-config.json:/core/device-config.json
+      - ./config/last-state.json:/core/last-state.json
     env_file:
       - config.env
