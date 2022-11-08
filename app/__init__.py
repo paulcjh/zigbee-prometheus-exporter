@@ -12,7 +12,7 @@ device_config = []
 MQTT_SERVER_HOST = os.getenv("MQTT_SERVER_HOST")
 
 
-with open("last-state.json", "r") as ls:
+with open("state/last-state.json", "r") as ls:
     file_data = ls.read()
     device_state = json.loads(file_data)
 
@@ -65,13 +65,15 @@ def start():
             )
     start_http_server(11111)
     while True:
-        with open("last-state.json", "r") as ls:
+        with open("state/last-state.json", "r") as ls:
             last_state = json.loads(ls.read())
 
         if last_state != device_state:
-            with open("last-state.json", "w") as ls:
+            with open("state/last-state.json", "w") as ls:
                 ls.write(json.dumps(device_state))
         time.sleep(1)
+
+
 if __name__ == "__main__":
     print("Starting!", flush=True)
     run_process(
