@@ -1,32 +1,87 @@
 [
 
-
-
-
-{
-
-	"device_id" : "0x00158d00089758de",
-	"name" : "living_room_climate_sensor",
-	"sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
-},
-{
-        "device_id" : "0x00158d0008ce4ce9",
-        "name" : "kitchen_climate_sensor",
-        "sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
-},
-{
-        "device_id" : "0x00158d0008c11ee0",
-        "name" : "bedroom_climate_sensor",
-        "sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
-},
-{
-        "device_id" : "0x00158d0008ce4731",
-        "name" : "bathroom_climate_sensor",
-        "sensors" : ["battery","humidity","linkquality","power_outage_count","pressure","temperature","voltage"]
-},
-{
-	"device_id" : "0x00124b00251be43e",
-	"name" : "living_room_desk_plug",
-	"sensors" : ["on"]
-}
+  {
+    "device_id": "0x00158d00089758de",
+    "name": "living_room_climate_sensor",
+    "sensors": [
+      "battery",
+      "humidity",
+      "linkquality",
+      "power_outage_count",
+      "pressure",
+      "temperature",
+      "voltage"
+    ]
+  },
+  {
+    "device_id": "0x00158d0008ce4ce9",
+    "name": "kitchen_climate_sensor",
+    "sensors": [
+      "battery",
+      "humidity",
+      "linkquality",
+      "power_outage_count",
+      "pressure",
+      "temperature",
+      "voltage"
+    ]
+  },
+  {
+    "device_id": "0x00158d0008c11ee0",
+    "name": "bedroom_climate_sensor",
+    "sensors": [
+      "battery",
+      "humidity",
+      "linkquality",
+      "power_outage_count",
+      "pressure",
+      "temperature",
+      "voltage"
+    ]
+  },
+  {
+    "device_id": "0x00158d0008ce4731",
+    "name": "bathroom_climate_sensor",
+    "sensors": [
+      "battery",
+      "humidity",
+      "linkquality",
+      "power_outage_count",
+      "pressure",
+      "temperature",
+      "voltage"
+    ]
+  },
+  {
+    "device_id": "0x00124b00251be43e",
+    "name": "living_room_desk_plug",
+    "sensors": [
+    ]
+  },
+  {
+    "device_id": "0x00124b0025440475",
+    "name": "hallway_motion_sensor",
+    "sensors": [
+      "battery",
+      "battery_low",
+      "linkquality",
+      "occupancy",
+      "tamper",
+      "voltage"
+    ]
+  },
+  {
+    "device_id": "0xec1bbdfffe547b6d",
+    "name": "living_room_light_1",
+    "sensors": [
+      "linkquality"
+    ]
+  },
+  {
+    "device_id": "solar_charging_current",
+    "name": "solar_charging_current",
+    "sensors": [
+      "current"
+    ]
+  }
 ]

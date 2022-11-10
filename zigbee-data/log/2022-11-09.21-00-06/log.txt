@@ -1,0 +1,53 @@
+info  2022-11-09 21:00:07: Logging to console and directory: '/app/data/log/2022-11-09.21-00-06' filename: log.txt
+info  2022-11-09 21:00:07: Starting Zigbee2MQTT version 1.28.2 (commit #360a777)
+info  2022-11-09 21:00:07: Starting zigbee-herdsman (0.14.68)
+info  2022-11-09 21:00:14: zigbee-herdsman started (resumed)
+info  2022-11-09 21:00:14: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20220219,"transportrev":2},"type":"zStack3x0"}'
+info  2022-11-09 21:00:14: Currently 7 devices are joined:
+info  2022-11-09 21:00:14: 0x00158d0008c11ee0 (0x00158d0008c11ee0): WSDCGQ11LM - Xiaomi Aqara temperature, humidity and pressure sensor (EndDevice)
+info  2022-11-09 21:00:14: 0x00158d00089758de (0x00158d00089758de): WSDCGQ11LM - Xiaomi Aqara temperature, humidity and pressure sensor (EndDevice)
+info  2022-11-09 21:00:14: 0x00158d0008ce4ce9 (0x00158d0008ce4ce9): WSDCGQ11LM - Xiaomi Aqara temperature, humidity and pressure sensor (EndDevice)
+info  2022-11-09 21:00:14: 0x00124b00251be43e (0x00124b00251be43e): SA-003-Zigbee - eWeLink Zigbee smart plug (Router)
+info  2022-11-09 21:00:14: 0x00158d0008ce4731 (0x00158d0008ce4731): WSDCGQ11LM - Xiaomi Aqara temperature, humidity and pressure sensor (EndDevice)
+info  2022-11-09 21:00:14: 0x00124b0025440475 (0x00124b0025440475): SNZB-03 - SONOFF Motion sensor (EndDevice)
+info  2022-11-09 21:00:14: 0xec1bbdfffe547b6d (0xec1bbdfffe547b6d): ZL1000100-CCT-US-V1A02 - Linkind Zigbee LED 9W A19 bulb, dimmable & tunable (Router)
+warn  2022-11-09 21:00:14: `permit_join` set to  `true` in configuration.yaml.
+warn  2022-11-09 21:00:14: Allowing new devices to join.
+warn  2022-11-09 21:00:14: Set `permit_join` to `false` once you joined all devices.
+info  2022-11-09 21:00:14: Zigbee: allowing new devices to join.
+info  2022-11-09 21:00:15: Connecting to MQTT server at mqtt://mqtt
+info  2022-11-09 21:00:15: Connected to MQTT server
+info  2022-11-09 21:00:15: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+info  2022-11-09 21:00:16: Started frontend on port 0.0.0.0:8080
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00158d0008c11ee0', payload '{"battery":77,"humidity":59.1,"power_outage_count":7,"pressure":1013.3,"temperature":18.9,"voltage":2965}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":63.95,"power_outage_count":64,"pressure":1012.7,"temperature":17.53,"voltage":2985}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4ce9', payload '{"battery":63,"humidity":66.04,"power_outage_count":9,"pressure":1012.3,"temperature":17.17,"voltage":2945}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00124b00251be43e', payload '{"state":"ON"}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4731', payload '{"battery":90,"humidity":71.22,"power_outage_count":6,"pressure":1012.5,"temperature":16.44,"voltage":2985}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"occupancy":true,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:00:16: MQTT publish: topic 'zigbee2mqtt/0xec1bbdfffe547b6d', payload '{"brightness":254,"color_mode":"color_temp","color_temp":370,"state":"ON"}'
+info  2022-11-09 21:00:45: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"linkquality":87,"occupancy":false,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:01:03: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"linkquality":83,"occupancy":true,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:02:28: MQTT publish: topic 'zigbee2mqtt/0x00124b00251be43e', payload '{"linkquality":87,"state":"ON"}'
+info  2022-11-09 21:02:35: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"linkquality":83,"occupancy":false,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:04:09: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4731', payload '{"battery":90,"humidity":71.39,"linkquality":131,"power_outage_count":6,"pressure":1012.5,"temperature":16.43,"voltage":2985}'
+info  2022-11-09 21:05:07: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":63.95,"linkquality":182,"power_outage_count":64,"pressure":1012.7,"temperature":18.48,"voltage":2985}'
+info  2022-11-09 21:05:07: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":61.87,"linkquality":182,"power_outage_count":64,"pressure":1012.7,"temperature":18.48,"voltage":2985}'
+info  2022-11-09 21:05:07: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":61.87,"linkquality":182,"power_outage_count":64,"pressure":1012.7,"temperature":18.48,"voltage":2985}'
+info  2022-11-09 21:07:08: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"linkquality":87,"occupancy":true,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:07:28: MQTT publish: topic 'zigbee2mqtt/0x00124b00251be43e', payload '{"linkquality":94,"state":"ON"}'
+info  2022-11-09 21:09:18: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4ce9', payload '{"battery":63,"humidity":66.04,"linkquality":98,"power_outage_count":9,"pressure":1012.3,"temperature":17.17,"voltage":2945}'
+info  2022-11-09 21:09:18: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4ce9', payload '{"battery":63,"humidity":67.17,"linkquality":98,"power_outage_count":9,"pressure":1012.3,"temperature":17.17,"voltage":2945}'
+info  2022-11-09 21:09:18: MQTT publish: topic 'zigbee2mqtt/0x00158d0008ce4ce9', payload '{"battery":63,"humidity":67.17,"linkquality":98,"power_outage_count":9,"pressure":1012.4,"temperature":17.17,"voltage":2945}'
+info  2022-11-09 21:11:12: MQTT publish: topic 'zigbee2mqtt/0x00158d0008c11ee0', payload '{"battery":77,"humidity":59.1,"linkquality":91,"power_outage_count":7,"pressure":1013.3,"temperature":18.38,"voltage":2965}'
+info  2022-11-09 21:11:12: MQTT publish: topic 'zigbee2mqtt/0x00158d0008c11ee0', payload '{"battery":77,"humidity":60.44,"linkquality":94,"power_outage_count":7,"pressure":1013.3,"temperature":18.38,"voltage":2965}'
+info  2022-11-09 21:11:12: MQTT publish: topic 'zigbee2mqtt/0x00158d0008c11ee0', payload '{"battery":77,"humidity":60.44,"linkquality":94,"power_outage_count":7,"pressure":1013.5,"temperature":18.38,"voltage":2965}'
+info  2022-11-09 21:11:35: MQTT publish: topic 'zigbee2mqtt/0x00124b0025440475', payload '{"battery":100,"battery_low":false,"linkquality":83,"occupancy":false,"tamper":false,"voltage":3100}'
+info  2022-11-09 21:11:38: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":61.87,"linkquality":185,"power_outage_count":64,"pressure":1012.7,"temperature":18.64,"voltage":2985}'
+info  2022-11-09 21:11:38: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":61.83,"linkquality":185,"power_outage_count":64,"pressure":1012.7,"temperature":18.64,"voltage":2985}'
+info  2022-11-09 21:11:38: MQTT publish: topic 'zigbee2mqtt/0x00158d00089758de', payload '{"battery":90,"humidity":61.83,"linkquality":185,"power_outage_count":64,"pressure":1013,"temperature":18.64,"voltage":2985}'
+info  2022-11-09 21:11:44: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+info  2022-11-09 21:11:44: Disconnecting from MQTT server
+info  2022-11-09 21:11:44: Stopping zigbee-herdsman...
+info  2022-11-09 21:11:53: Stopped zigbee-herdsman
+info  2022-11-09 21:11:53: Stopped Zigbee2MQTT

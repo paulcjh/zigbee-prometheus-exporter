@@ -6,12 +6,15 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ./config/device-config.json:/core/device-config.json
-      - ./config/last-state.json:/core/state/last-state.json
+      - ./device-config.json:/core/device-config.json
+      - ./last-state.json:/state/last-state.json
     env_file:
       - config.env
     ports:
       - 11111:11111
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1
   mqtt:
     image: eclipse-mosquitto:2.0
     restart: unless-stopped
@@ -33,3 +36,4 @@ services:
       - TZ=Europe/London
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1

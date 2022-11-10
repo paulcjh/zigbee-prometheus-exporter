@@ -1,0 +1,49 @@
+permit_join: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mqtt
+serial:
+  port: /dev/ttyUSB0
+  adapter: auto
+  baudrate: 115200
+  rtscts: false
+frontend:
+  port: 8080
+advanced:
+  network_key:
+    - 235
+    - 102
+    - 254
+    - 249
+    - 162
+    - 155
+    - 208
+    - 111
+    - 188
+    - 214
+    - 92
+    - 144
+    - 189
+    - 232
+    - 6
+    - 213
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+device_options:
+  legacy: false
+devices:
+  '0x00158d0008c11ee0':
+    friendly_name: '0x00158d0008c11ee0'
+  '0x00158d00089758de':
+    friendly_name: '0x00158d00089758de'
+  '0x00158d0008ce4ce9':
+    friendly_name: '0x00158d0008ce4ce9'
+  '0x00124b00251be43e':
+    friendly_name: '0x00124b00251be43e'
+  '0x00158d0008ce4731':
+    friendly_name: '0x00158d0008ce4731'
+  '0x00124b0025440475':
+    friendly_name: '0x00124b0025440475'
+  '0xec1bbdfffe547b6d':
+    friendly_name: '0xec1bbdfffe547b6d'

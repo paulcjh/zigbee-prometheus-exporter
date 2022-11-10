@@ -1,6 +1,7 @@
 import os
 import time
 import json
+import serial
 
 from watchgod import run_process, RegExpWatcher, AllWatcher
 
@@ -10,9 +11,9 @@ from prometheus_client import start_http_server, Gauge
 device_state = {}
 device_config = []
 MQTT_SERVER_HOST = os.getenv("MQTT_SERVER_HOST")
-
-
-with open("state/last-state.json", "r") as ls:
+serial_channel = serial.Serial("/dev/ttyUSB1", 115200, timeout=1)
+serial_channel.reset_input_buffer()
+with open("/state/last-state.json", "r") as ls:
     file_data = ls.read()
     device_state = json.loads(file_data)
 
@@ -21,14 +22,14 @@ def on_broadcast(client, userdata, message):
     topic = message.topic
     device = topic.split("/")[1]
     if device not in device_state:
-        print(f"New device found with ID:{device}")
+        print(f"New device found with ID:{device}", flush=True)
         device_state[device] = dict(sensors={}, name=device)
     new_sensor_states = json.loads(message.payload.decode())
 
     for sensor in list(new_sensor_states.keys()):
         device_state[device]["sensors"][sensor] = new_sensor_states[sensor]
 
-    print(f"New device state ({device}): {new_sensor_states}")
+    print(f"New device state ({device}): {new_sensor_states}", flush=True)
 
 
 def start():
@@ -63,13 +64,24 @@ def start():
                     "sensors"
                 ][sensor]
             )
+    def get_current():
+        serial_channel.writelines([b"getSolarCurrent"])
+        while not serial_channel.in_waiting:
+            time.sleep(0.01)
+        response = serial_channel.readline()
+        print(f"Solar charge output={response}", flush=True)
+        response = response.decode().rstrip()
+        device_state["solar_charging_current"]["sensors"]["current"] = float(response.split("=")[1])
+    #_gauge = Gauge("solar_charging_current", "Solar charging current")
+    #_gauge.set_function(get_current)
     start_http_server(11111)
     while True:
-        with open("state/last-state.json", "r") as ls:
+        #get_current()
+        with open("/state/last-state.json", "r") as ls:
             last_state = json.loads(ls.read())
 
         if last_state != device_state:
-            with open("state/last-state.json", "w") as ls:
+            with open("/state/last-state.json", "w") as ls:
                 ls.write(json.dumps(device_state))
         time.sleep(1)
 
